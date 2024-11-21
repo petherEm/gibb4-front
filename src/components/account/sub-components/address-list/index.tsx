@@ -47,6 +47,7 @@ const AddressList: React.FC<AddressListProps> = ({
           </div>
           <div>
             <AddressActions
+              /* @ts-ignore */
               id={address.id}
               setOpen={openDialog}
               onEdit={() => setAddressToEdit(address)}
