@@ -2,9 +2,9 @@
 
 import { useMemo } from 'react'
 
+import AddressActions from '@components/checkout/sub-components/address-actions'
 import { Badge } from '@components/common/sub-components/badge'
 import { HttpTypes } from '@medusajs/types'
-import AddressActions from '@modules/checkout/components/address-actions'
 
 type AddressListProps = {
   address: HttpTypes.StoreCustomerAddress

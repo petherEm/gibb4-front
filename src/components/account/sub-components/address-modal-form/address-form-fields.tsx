@@ -1,11 +1,11 @@
 import { ChangeEventHandler } from 'react'
 
+import CountrySelect from '@components/checkout/sub-components/country-select'
 import { Box } from '@components/common/sub-components/box'
 import { Checkbox } from '@components/common/sub-components/checkbox'
 import { Input } from '@components/common/sub-components/input'
 import { Label } from '@components/common/sub-components/label'
 import { HttpTypes } from '@medusajs/types'
-import CountrySelect from '@modules/checkout/components/country-select'
 import { useFormikContext } from 'formik'
 
 import { UserShippingAddressInputProps } from './address-form.consts'

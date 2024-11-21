@@ -1,5 +1,5 @@
 import { HttpTypes } from '@medusajs/types'
-import { SelectedAddressProps } from '@modules/checkout/components/shipping-address/selected-address'
+import { SelectedAddressProps } from '@components/checkout/sub-components/shipping-address/selected-address'
 import { isEqual, pick } from 'lodash'
 
 type FormData = Record<string, string>

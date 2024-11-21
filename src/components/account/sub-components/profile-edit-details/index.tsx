@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
+import { SubmitButton } from '@components/checkout/sub-components/submit-button'
 import { Button } from '@components/common/sub-components/button'
 import {
   Dialog,
@@ -19,7 +20,6 @@ import { Input } from '@components/common/sub-components/input'
 import { toast } from '@components/common/sub-components/toast'
 import { updateCustomer } from '@lib/data/customer'
 import { HttpTypes } from '@medusajs/types'
-import { SubmitButton } from '@modules/checkout/components/submit-button'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import { useFormState } from 'react-dom'
 

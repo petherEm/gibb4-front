@@ -1,8 +1,8 @@
 import { Box } from '@components/common/sub-components/box'
 import LocalizedClientLink from '@components/common/sub-components/localized-client-link'
 import { Text } from '@components/common/sub-components/text'
+import Thumbnail from '@components/products/sub-components/thumbnail'
 import { StoreProduct } from '@medusajs/types'
-import Thumbnail from '@modules/products/components/thumbnail'
 
 export const RecommendedItem = ({
   handleOpenDialogChange,

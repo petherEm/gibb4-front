@@ -1,7 +1,7 @@
+import { LOGIN_VIEW } from '@components/account/templates/login-template'
 import { Box } from '@components/common/sub-components/box'
 import { Button } from '@components/common/sub-components/button'
 import { Heading } from '@components/common/sub-components/heading'
-import { LOGIN_VIEW } from '@modules/account/templates/login-template'
 
 export default function LoginPrompt({
   setCurrentView,

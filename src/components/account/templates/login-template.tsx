@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
+import ForgotPassword from '@components/account/sub-components/forgot-password'
+import Login from '@components/account/sub-components/login'
+import Register from '@components/account/sub-components/register'
 import { Box } from '@components/common/sub-components/box'
-import ForgotPassword from '@modules/account/components/forgot-password'
-import Login from '@modules/account/components/login'
-import Register from '@modules/account/components/register'
 
 export enum LOGIN_VIEW {
   SIGN_IN = 'sign-in',

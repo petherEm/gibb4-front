@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react'
 
+import { LOGIN_VIEW } from '@components/account/templates/login-template'
+import ErrorMessage from '@components/checkout/sub-components/error-message'
+import { SubmitButton } from '@components/checkout/sub-components/submit-button'
 import { CheckCircleIcon, XCircleIcon } from '@components/common/icons'
 import { Box } from '@components/common/sub-components/box'
 import { Checkbox } from '@components/common/sub-components/checkbox'
@@ -14,9 +17,6 @@ import { passwordRequirements } from '@lib/constants'
 import { signup } from '@lib/data/customer'
 import { cn } from '@lib/util/cn'
 import { validatePassword, ValidationError } from '@lib/util/validator'
-import { LOGIN_VIEW } from '@modules/account/templates/login-template'
-import ErrorMessage from '@modules/checkout/components/error-message'
-import { SubmitButton } from '@modules/checkout/components/submit-button'
 import { useFormState } from 'react-dom'
 
 import LoginPrompt from './login-prompt'

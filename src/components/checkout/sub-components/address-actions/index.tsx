@@ -35,7 +35,7 @@ const getSameAsShipping = (cart) =>
     ? compareAddresses(cart.billing_address, cart.shipping_address)
     : true
 
-export default function Component({
+export default function AddressActions({
   cart = null,
   customer = null,
 }: {

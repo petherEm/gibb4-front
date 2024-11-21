@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import { LOGIN_VIEW } from '@components/account/templates/login-template'
+import { SubmitButton } from '@components/checkout/sub-components/submit-button'
 import { Box } from '@components/common/sub-components/box'
 import { Button } from '@components/common/sub-components/button'
 import { Heading } from '@components/common/sub-components/heading'
@@ -7,8 +9,6 @@ import { Input } from '@components/common/sub-components/input'
 import { toast } from '@components/common/sub-components/toast'
 import { login } from '@lib/data/customer'
 import { ValidationError } from '@lib/util/validator'
-import { LOGIN_VIEW } from '@modules/account/templates/login-template'
-import { SubmitButton } from '@modules/checkout/components/submit-button'
 import { useFormState } from 'react-dom'
 
 import RegisterPrompt from './register-prompt'

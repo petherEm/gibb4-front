@@ -37,7 +37,6 @@ interface CategoryItem {
 const SideMenu = ({
   productCategories,
   collections,
-  strapiCollections,
 }: {
   productCategories: StoreProductCategory[]
   collections: StoreCollection[]

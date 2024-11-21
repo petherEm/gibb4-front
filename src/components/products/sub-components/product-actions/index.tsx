@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useParams } from 'next/navigation'
 
+import ItemQtySelect from '@components/cart/sub-components/item-qty-select'
 import { Box } from '@components/common/sub-components/box'
 import { Button } from '@components/common/sub-components/button'
 import Divider from '@components/common/sub-components/divider'
@@ -11,9 +12,8 @@ import { toast } from '@components/common/sub-components/toast'
 import OptionSelect from '@components/products/sub-components/product-actions/option-select'
 import { addToCart } from '@lib/data/cart'
 import { HttpTypes } from '@medusajs/types'
-import ItemQtySelect from '@modules/cart/components/item-qty-select'
+import { VariantColor } from '@types/strapi'
 import { isEqual } from 'lodash'
-import { VariantColor } from 'types/strapi'
 
 import ProductPrice from '../product-price'
 

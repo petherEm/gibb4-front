@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 
+import { LOGIN_VIEW } from '@components/account/templates/login-template'
+import { SubmitButton } from '@components/checkout/sub-components/submit-button'
 import { SearchResultsIcon } from '@components/common/icons'
 import { Box } from '@components/common/sub-components/box'
 import { Button } from '@components/common/sub-components/button'
@@ -11,8 +13,6 @@ import { Text } from '@components/common/sub-components/text'
 import { emailRegex } from '@lib/constants'
 import { forgotPassword } from '@lib/data/customer'
 import { cn } from '@lib/util/cn'
-import { LOGIN_VIEW } from '@modules/account/templates/login-template'
-import { SubmitButton } from '@modules/checkout/components/submit-button'
 import { useFormState } from 'react-dom'
 
 type Props = {

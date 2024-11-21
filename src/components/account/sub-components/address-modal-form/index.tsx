@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 
+import { SubmitButton } from '@components/checkout/sub-components/submit-button'
 import {
   Dialog,
   DialogBody,
@@ -17,7 +18,6 @@ import { toast } from '@components/common/sub-components/toast'
 import { addCustomerAddress, updateCustomerAddress } from '@lib/data/customer'
 import { userShippingAddressFormValidationSchema } from '@lib/util/validator'
 import { HttpTypes } from '@medusajs/types'
-import { SubmitButton } from '@modules/checkout/components/submit-button'
 import { Form, Formik } from 'formik'
 import { useFormState } from 'react-dom'
 
