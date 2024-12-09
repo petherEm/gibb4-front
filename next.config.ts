@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'gibbarosa.fra1.cdn.digitaloceanspaces.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'medusa-public-images.s3.eu-west-1.amazonaws.com',
       },
       {

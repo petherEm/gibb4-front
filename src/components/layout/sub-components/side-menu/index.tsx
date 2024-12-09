@@ -40,7 +40,7 @@ const SideMenu = ({
 }: {
   productCategories: StoreProductCategory[]
   collections: StoreCollection[]
-  strapiCollections?: CollectionsData
+  featuredCollections?: CollectionsData
 }) => {
   const [categoryStack, setCategoryStack] = useState<CategoryItem[]>([])
   const currentCategory = categoryStack[categoryStack.length - 1] || null
@@ -79,8 +79,8 @@ const SideMenu = ({
         (cat) => cat.type === 'parent_category'
       )
 
-      const strapiCollection = strapiCollections.data.find(
-        (cmsCollection) => cmsCollection.Handle === item.handle_id
+      const strapiCollection = collections.find(
+        (collection) => collection.handle === item.handle
       )
 
       return item.type === 'collection' && strapiCollection ? (
@@ -91,15 +91,15 @@ const SideMenu = ({
           onClick={() => handleOpenDialogChange(false)}
         >
           <Image
-            src={strapiCollection.Image.url}
-            alt={strapiCollection.Title}
+            src=""
+            alt="alt"
             width={600}
             height={160}
             className="h-[160px] w-full object-cover"
           />
           <Box className="absolute bottom-6 left-6">
             <Heading as="h3" className="text-2xl text-static">
-              {strapiCollection.Title}
+              Strapi
             </Heading>
           </Box>
         </LocalizedClientLink>

@@ -67,7 +67,7 @@ const Sorting = ({ options, sortBy, setQueryParams }: SortingProps) => {
       <div className="relative z-20 flex w-full justify-end small:hidden">
         <Menu>
           {({ close }) => (
-            <>
+            <div>
               <Menu.Button className="flex w-full items-center justify-center gap-2 rounded-full bg-fg-secondary py-3.5 text-md text-basic-primary">
                 <SortIcon />
                 Sort
@@ -90,7 +90,7 @@ const Sorting = ({ options, sortBy, setQueryParams }: SortingProps) => {
                   </Menu.Item>
                 </Menu.Items>
               </Transition>
-            </>
+            </div>
           )}
         </Menu>
       </div>

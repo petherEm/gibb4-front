@@ -80,10 +80,11 @@ export const getProductsList = async function ({
     )
     .then(({ products }) => {
       const filteredProducts = products.filter((product) => {
-        if (product.variants.length === 1) {
-          return product.variants[0].inventory_quantity > 0
-        }
-        return product.variants.length > 1
+        // if (product.variants.length === 1) {
+        //   return product.variants[0].inventory_quantity > 0
+        // }
+        // return product.variants.length > 1
+        return true;
       })
 
       const filteredCount = filteredProducts.length

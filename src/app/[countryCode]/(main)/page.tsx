@@ -1,6 +1,11 @@
 import { Suspense } from 'react'
 import { Metadata } from 'next'
 
+import Hero from '@components/main/sub-components/hero'
+import InstaFeed from '@components/main/sub-components/insta-feed'
+import MidBanner from '@components/main/sub-components/mid-banner'
+import NewsletterBanner from '@components/main/sub-components/news-letter-banner'
+import SubHero from '@components/main/sub-components/sub-hero'
 import { ProductCarousel } from '@components/products/sub-components/product-carousel'
 import { getCollectionsList } from '@lib/data/collections'
 import { getProductsList } from '@lib/data/products'
@@ -26,20 +31,46 @@ export default async function Home(props: {
   if (!products || !collectionsList || !region) {
     return null
   }
-  console.log(products)
+
+  // MOVE IT POTENTIALLY TO LIB AS A FILTERED PRODUCT FETCHING
+
+  // Find the "New" collection
+  const newCollection = collectionsList.find(
+    (collection) => collection.title === 'New' || collection.handle === 'new'
+  )
+
+  // Filter products belonging to the "New" collection
+  const newCollectionProducts = products.filter(
+    (product) => product.collection.id === newCollection?.id
+  )
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center">
-      <h1>HeroBanner</h1>
+    <div className="flex min-h-screen w-full flex-col">
+      <Hero />
+      <SubHero />
+
       <ProductCarousel
-        products={products}
+        products={newCollectionProducts}
         regionId={region.id}
-        title="Our bestsellers"
+        title="New"
         viewAll={{
           link: '/store',
           text: 'View all',
         }}
       />
+      <MidBanner />
+      <ProductCarousel
+        products={products}
+        regionId={region.id}
+        title="Nasze ikony"
+        viewAll={{
+          link: '/store',
+          text: 'View all',
+        }}
+      />
+      <NewsletterBanner />
+
+      <InstaFeed />
     </div>
   )
 }

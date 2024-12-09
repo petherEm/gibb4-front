@@ -65,7 +65,7 @@ export default function CarouselWrapper({
             'small:hidden': isLessThanTwoProducts,
           })}
         >
-          <Button
+          {/* <Button
             withIcon
             variant="icon"
             className="bg-fg-secondary text-action-primary hover:bg-fg-secondary-hover hover:text-action-primary-hover active:bg-fg-secondary-pressed active:text-action-primary-pressed"
@@ -82,7 +82,7 @@ export default function CarouselWrapper({
             disabled={!canScrollNext}
           >
             <ArrowRightIcon />
-          </Button>
+          </Button> */}
         </Box>
       </Box>
       <div ref={emblaRef}>{children}</div>

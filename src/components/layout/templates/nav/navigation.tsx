@@ -17,12 +17,12 @@ export default function Navigation({
   countryCode,
   productCategories,
   collections,
-  strapiCollections,
+  featuredCollections,
 }: {
   countryCode: string
   productCategories: StoreProductCategory[]
   collections: StoreCollection[]
-  strapiCollections?: CollectionsData
+  featuredCollections?: CollectionsData
 }) {
   const pathname = usePathname()
   const [openDropdown, setOpenDropdown] = useState<{
@@ -57,7 +57,7 @@ export default function Navigation({
             customContent={
               item.name === 'Collections' ? (
                 <CollectionsMenu
-                  cmsCollections={strapiCollections}
+                  cmsCollections={featuredCollections}
                   medusaCollections={collections}
                 />
               ) : undefined

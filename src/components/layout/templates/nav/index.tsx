@@ -28,7 +28,8 @@ export default async function NavWrapper(props: any) {
         <NavContent
           productCategories={productCategories}
           collections={collections}
-          // strapiCollections={strapiCollections}
+          // at this moment featuredCollections === collections
+          featuredCollections={collections}
           countryCode={props.countryCode}
           products={products}
         />

@@ -1,9 +1,9 @@
 import 'server-only'
-
 import { cookies } from 'next/headers'
 
-export const getAuthHeaders = (): { authorization: string } | {} => {
-  const token = cookies().get('_medusa_jwt')?.value
+export async function getAuthHeaders(): Promise<{ authorization: string } | {}> {
+  const cookieStore = await cookies()
+  const token = cookieStore.get('_medusa_jwt')?.value
 
   if (token) {
     return { authorization: `Bearer ${token}` }
@@ -12,34 +12,40 @@ export const getAuthHeaders = (): { authorization: string } | {} => {
   return {}
 }
 
-export const setAuthToken = (token: string) => {
-  cookies().set('_medusa_jwt', token, {
-    maxAge: 60 * 60 * 24 * 7,
+export async function setAuthToken(token: string): Promise<void> {
+  const cookieStore = await cookies()
+  cookieStore.set('_medusa_jwt', token, {
+    maxAge: 60 * 60 * 24 * 7, // 7 days
     httpOnly: true,
     sameSite: 'strict',
     secure: process.env.NODE_ENV === 'production',
   })
 }
 
-export const removeAuthToken = () => {
-  cookies().set('_medusa_jwt', '', {
-    maxAge: -1,
+export async function removeAuthToken(): Promise<void> {
+  const cookieStore = await cookies()
+  cookieStore.set('_medusa_jwt', '', {
+    maxAge: 0,
   })
 }
 
-export const getCartId = () => {
-  return cookies().get('_medusa_cart_id')?.value
+export async function getCartId(): Promise<string | undefined> {
+  const cookieStore = await cookies()
+  return cookieStore.get('_medusa_cart_id')?.value
 }
 
-export const setCartId = (cartId: string) => {
-  cookies().set('_medusa_cart_id', cartId, {
-    maxAge: 60 * 60 * 24 * 7,
+export async function setCartId(cartId: string): Promise<void> {
+  const cookieStore = await cookies()
+  cookieStore.set('_medusa_cart_id', cartId, {
+    maxAge: 60 * 60 * 24 * 7, // 7 days
     httpOnly: true,
     sameSite: 'strict',
     secure: process.env.NODE_ENV === 'production',
   })
 }
 
-export const removeCartId = () => {
-  cookies().set('_medusa_cart_id', '', { maxAge: -1 })
+export async function removeCartId(): Promise<void> {
+  const cookieStore = await cookies()
+  cookieStore.set('_medusa_cart_id', '', { maxAge: 0 })
 }
+

@@ -1,4 +1,6 @@
 import { uiPreset } from "./preset/preset"
+import { fontFamily } from 'tailwindcss/defaultTheme'
+
 
 module.exports = {
   darkMode: 'class',
@@ -12,6 +14,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', ...fontFamily.sans],
+        playfair: ['var(--font-playfair)', ...fontFamily.serif],
+      },
       transitionProperty: {
         width: 'width margin',
         height: 'height',

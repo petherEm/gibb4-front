@@ -60,8 +60,7 @@ export default async function Footer({ countryCode }: { countryCode: string }) {
               href="#"
               className="w-max cursor-pointer text-static"
             >
-              {/* <SolaceLogo /> */}
-              <h1 className="">Gibbarosa</h1>
+              <h1 className="font-playfair text-4xl">Gibbarosa</h1>
             </LocalizedClientLink>
             <SocialMedia className="hidden large:flex" />
           </Box>

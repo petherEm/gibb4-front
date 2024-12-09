@@ -18,12 +18,19 @@ export default function CollectionsMenu({
   cmsCollections?: CollectionsData
   medusaCollections: StoreCollection[]
 }) {
-  const newestCollections = ['bags', 'shoes', 'clothing', 'accessories']
+  // const newestCollections = ['bags', 'shoes', 'clothing', 'accessories']
+  const newestCollections = medusaCollections.map((i) => i.title)
 
   return (
     <Container className="grid grid-cols-3 gap-2 !px-14 !pb-8 !pt-5">
       {newestCollections.slice(0, 3).map((i) => (
-        <p key={i}>nothing</p>
+        <CollectionTile
+          key={i}
+          title={i}
+          description="Discover our iconic bags."
+          handle={i}
+          imgSrc="https://gibbarosa.fra1.cdn.digitaloceanspaces.com/Elegant_sandals.png"
+        />
       ))}
     </Container>
   )
@@ -63,7 +70,10 @@ const CollectionTile = ({
             href={`/collections/${handle}`}
             className="w-max"
           >
-            <Heading as="h3" className="mt-auto text-3xl text-static">
+            <Heading
+              as="h3"
+              className="mt-auto text-3xl capitalize text-static"
+            >
               {title}
             </Heading>
           </LocalizedClientLink>

@@ -45,8 +45,8 @@ const Item = ({ item, type = 'full' }: ItemProps) => {
       })
   }
 
-  const maxQuantity =
-    item.variant.inventory_quantity > 0 ? item.variant.inventory_quantity : 10
+  const maxQuantity = 1
+  // item.variant.inventory_quantity > 0 ? item.variant.inventory_quantity : 10
 
   return (
     <Box className="flex bg-primary small:h-[172px]">
@@ -67,24 +67,21 @@ const Item = ({ item, type = 'full' }: ItemProps) => {
                 {item.product_title}
               </Heading>
             </LocalizedClientLink>
-            <LineItemOptions
-              variant={item.variant}
-              data-testid="product-variant"
-            />
+            <LineItemOptions variant={item.variant} />
           </Box>
           <Box className="block w-max small:hidden">
             <LineItemPrice item={item} style="tight" />
           </Box>
           {type === 'full' ? (
             <Box className="flex items-center gap-2">
-              <Box className="flex w-[108px] flex-col gap-2">
+              {/* <Box className="flex w-[108px] flex-col gap-2">
                 <ItemQtySelect
                   qty={item.quantity}
                   maxQuantity={maxQuantity}
                   action={changeQuantity}
                 />
                 <ErrorMessage error={error} />
-              </Box>
+              </Box> */}
               {updating && <Spinner />}
             </Box>
           ) : (

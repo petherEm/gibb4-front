@@ -139,34 +139,29 @@ export const createNavigation = (
   collections?: StoreCollection[]
 ) => [
   {
-    name: 'Shop',
-    handle: '/store',
-    category_children: productCategories
-      .filter((category) => !category.parent_category)
-      .map((category) => ({
-        name: category.name,
-        type: 'parent_category',
-        handle: `/categories/${category.handle}`,
-        category_children: category.category_children.map((subCategory) => ({
-          name: subCategory.name,
-          handle: `/categories/${subCategory.handle}`,
-          icon: null,
-          category_children: null,
-        })),
-      })),
+    name: 'New',
+    handle: '/collections/new',
+    category_children: null,
   },
   {
-    name: 'Collections',
+    name: 'Bags',
+    handle: '/categories/bags',
+    category_children: null,
+  },
+  {
+    name: 'Shoes',
+    handle: '/categories/shoes',
+    category_children: null,
+  },
+  {
+    name: 'Jewelry',
     handle: '/store',
-    category_children: !collections
-      ? null
-      : collections.map((collection) => ({
-          name: collection.title,
-          type: 'collection',
-          handle: `/collections/${collection.handle}`,
-          handle_id: collection.handle,
-          category_children: null,
-        })),
+    category_children: null,
+  },
+  {
+    name: 'Accessories',
+    handle: '/categories/accessories',
+    category_children: null,
   },
   {
     name: 'About Us',

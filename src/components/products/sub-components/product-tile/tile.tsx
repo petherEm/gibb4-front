@@ -31,15 +31,15 @@ export function ProductTileClient({
     const differenceInDays =
       (currentDate.getTime() - createdAt.getTime()) / (1000 * 3600 * 24)
 
-    return differenceInDays <= 7
+    return differenceInDays <= 100
   }, [product.created_at])
 
   return (
     <Box className="group flex flex-col">
-      <Box className="relative h-[290px] small:h-[504px]">
+      <Box className="relative h-[290px] small:h-[400px]">
         {isNew && (
           <Box className="absolute left-3 top-3 z-10 small:left-5 small:top-5">
-            <Badge label="New product" variant="brand" />
+            <Badge label="New" variant="brand" />
           </Box>
         )}
         <LocalizedClientLink href={`/products/${product.handle}`}>
@@ -73,16 +73,23 @@ function ProductInfo({
   }
 }) {
   return (
-    <Box className="flex flex-col gap-3 p-4 small:gap-6 small:p-5">
-      <div className="flex flex-col gap-4">
+    <Box className="flex flex-col items-start gap-3 p-4 text-left small:gap-6 small:px-0 small:py-3">
+      <div className="flex flex-col items-start gap-4">
         <LocalizedClientLink
           href={`/products/${product.handle}`}
           className="mx-auto w-max"
         >
           <Text
+            title={product.subtitle}
+            as="span"
+            className="line-clamp-2 text-left text-lg text-basic-primary"
+          >
+            {product.subtitle}
+          </Text>
+          <Text
             title={product.title}
             as="span"
-            className="line-clamp-2 text-center text-lg text-basic-primary"
+            className="line-clamp-2 text-left text-lg text-basic-primary"
           >
             {product.title}
           </Text>

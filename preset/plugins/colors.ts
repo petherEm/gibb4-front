@@ -1,7 +1,7 @@
 export const rootColors = {
   /*BACKGROUND*/
 
-  '--bg-static': '9 9 9',
+  '--bg-static': '43 43 43',
   '--bg-primary': '255 255 255',
   '--bg-secondary': '249 249 249',
   '--bg-brand': '218 254 222',
@@ -59,7 +59,7 @@ export const rootColors = {
 export const darkMode = {
   /*BACKGROUND*/
 
-  '--bg-static': '9 9 9',
+  '--bg-static': '43 43 43',
   '--bg-primary': '9 9 9',
   '--bg-secondary': '21 21 21',
   '--bg-brand': '9 9 9',

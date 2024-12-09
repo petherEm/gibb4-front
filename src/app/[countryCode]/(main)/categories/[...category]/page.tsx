@@ -1,7 +1,3 @@
-import React from 'react'
+import CategoryTemplate from '@components/categories/templates'
 
-const CategoryPage = () => {
-  return <div>CategoryPage</div>
-}
-
-export default CategoryPage
+export default CategoryTemplate
