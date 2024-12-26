@@ -22,7 +22,7 @@ export default async function NavWrapper(props: any) {
   return (
     <Container
       as="nav"
-      className="duration-400 sticky top-0 z-50 mx-0 max-w-full border-b border-basic-primary bg-primary !py-0 transition-all ease-in-out medium:!px-14"
+      className="duration-400 sticky top-0 z-50 mx-0 max-w-full border-b border-basic-primary bg-primary !py-0 px-0 transition-all ease-in-out medium:!px-14"
     >
       <Container className="flex items-center justify-between !p-0">
         <NavContent

@@ -9,7 +9,6 @@ import LocalizedClientLink from '@components/common/sub-components/localized-cli
 import SideMenu from '@components/layout/sub-components/side-menu'
 import { SearchDialog } from '@components/search/sub-components/search-dialog'
 import SearchDropdown from '@components/search/sub-components/search-dropdown'
-import { cn } from '@lib/util/cn'
 
 import Navigation from './navigation'
 
@@ -19,7 +18,7 @@ export default function NavContent(props: any) {
   return (
     <>
       <Box className="flex w-full items-center">
-        <Box className="flex w-3/4 items-center gap-4">
+        <Box className="flex items-center gap-2">
           <Box className="flex large:hidden">
             <SideMenu
               productCategories={props.productCategories}
@@ -29,7 +28,7 @@ export default function NavContent(props: any) {
           </Box>
 
           <LocalizedClientLink href="/">
-            <h1 className="-mt-2 font-playfair text-3xl font-bold small:text-3xl large:text-4xl">
+            <h1 className="-mt-2 font-playfair text-[28px] font-bold small:text-3xl large:text-4xl">
               Gibbarosa
             </h1>
           </LocalizedClientLink>
