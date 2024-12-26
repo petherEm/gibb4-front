@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 
 import './globals.css'
 
@@ -27,6 +27,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Gibbarosa v4 - Preowned Luxury',
   description: 'Gibbarosa - Preowned Luxury',
+}
+
+export const viewport: Viewport = {
+  maximumScale: 1,
 }
 
 export default function RootLayout({

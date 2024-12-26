@@ -74,6 +74,10 @@ const Shipping: React.FC<ShippingProps> = ({
     }
   }, [isOpen, cart.shipping_methods])
 
+  console.log('Available shipping methods:', availableShippingMethods)
+  console.log('Selected shipping method ID:', selectedMethodId)
+  console.log('Cart shipping methods:', cart.shipping_methods)
+
   return (
     <Box className="bg-primary p-5">
       <Box

@@ -29,7 +29,9 @@ export default function CheckoutNav() {
       </Box>
       <Box className="flex items-center justify-end small:flex-1 small:justify-center">
         <LocalizedClientLink href="/">
-          <SolaceLogo className="h-6 small:h-7" />
+          <h1 className="-mt-2 font-playfair text-3xl font-bold small:text-3xl large:text-4xl">
+            Gibbarosa
+          </h1>
         </LocalizedClientLink>
       </Box>
       <div className="hidden flex-1 basis-0 small:flex" />

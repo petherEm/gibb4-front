@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Form from 'next/form'
 import Image from 'next/image'
 
 import { Button } from '@components/common/sub-components/button'
@@ -12,38 +11,54 @@ import { Input } from '@components/common/sub-components/input'
 export default function NewsletterSignup() {
   const [isChecked, setIsChecked] = useState(false)
 
-  async function handleSubmit(formData: FormData) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
     // Here you would typically send the data to your server
     console.log('Form submitted:', Object.fromEntries(formData))
   }
 
   return (
-    <Container className="mx-auto max-w-7xl px-4">
-      <div className="flex flex-col items-center gap-8 px-4 py-12 small:flex-row small:items-start small:gap-12 small:px-8">
-        <div className="sm:w-1/2 space-y-6">
+    <Container className="w-[90%] px-4 small:max-w-[90%] small:px-0 medium:max-w-[90%]">
+      <div className="mx-auto flex flex-col items-start gap-6 small:flex-row small:gap-x-10">
+        {/* Image Section */}
+        <div className="relative order-1 aspect-square w-full overflow-hidden small:order-none small:aspect-auto small:h-[300px] small:w-1/2">
+          <Image
+            src="https://gibbarosa.fra1.cdn.digitaloceanspaces.com/Elegant_sandals.png"
+            alt="Elegant sandals"
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, 50vw"
+            priority
+          />
+        </div>
+
+        {/* Text and Form Section */}
+        <div className="w-full space-y-6 small:w-1/2">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold leading-tight tracking-tight small:text-4xl">
-              Dołącz do nas
-              <br />i otrzymaj 100zł na
+              Join us
               <br />
-              pierwsze zakupy.
+              and receive 100 PLN
+              <br />
+              for your first purchase.
             </h2>
           </div>
-          <Form action={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="flex gap-2">
               <Input
                 type="email"
                 name="email"
-                placeholder="Twój adres email"
+                placeholder="Your email address"
                 required
-                className="flex-1 rounded-none border-x-0 border-t-0 border-b-black px-0 placeholder:text-gray-500 focus-visible:border-b-black focus-visible:ring-0"
+                className="mx-4 flex-1 rounded-none border-x-0 border-t-0 border-b-black bg-transparent px-0 placeholder:text-gray-500 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0"
               />
               <Button
                 type="submit"
                 variant="ghost"
                 className="rounded-none text-black hover:bg-transparent hover:text-gray-600"
               >
-                Dołącz
+                Join
               </Button>
             </div>
             <div className="flex items-start gap-2">
@@ -59,22 +74,12 @@ export default function NewsletterSignup() {
                 htmlFor="privacy"
                 className="text-sm leading-tight text-gray-600"
               >
-                Wyrażam zgodę na przetwarzanie danych osobowych w celu
-                otrzymywania newslettera. Sprawdź naszą politykę prywatności.
-                Możesz anulować subskrypcję kiedy chcesz.
+                I consent to the processing of personal data for the purpose of
+                receiving the newsletter. Check our privacy policy. You can
+                unsubscribe at any time.
               </label>
             </div>
-          </Form>
-        </div>
-        <div className="relative aspect-square w-full overflow-hidden small:aspect-auto small:h-[300px] small:w-2/3">
-          <Image
-            src="https://gibbarosa.fra1.cdn.digitaloceanspaces.com/Elegant_sandals.png"
-            alt="Elegant sandals"
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 100vw, 50vw"
-            priority
-          />
+          </form>
         </div>
       </div>
     </Container>

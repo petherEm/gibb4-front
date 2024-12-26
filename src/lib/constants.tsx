@@ -163,11 +163,11 @@ export const createNavigation = (
     handle: '/categories/accessories',
     category_children: null,
   },
-  {
-    name: 'About Us',
-    handle: '/about-us',
-    category_children: null,
-  },
+  // {
+  //   name: 'About Us',
+  //   handle: '/about-us',
+  //   category_children: null,
+  // },
 ]
 
 export const createFooterNavigation = (

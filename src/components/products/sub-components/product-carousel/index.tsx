@@ -28,10 +28,10 @@ export function ProductCarousel({
   const displayProducts = products.slice(0, 4)
 
   return (
-    <Container className="w-[90%]">
+    <Container className="w-[90%] !px-0 small:max-w-[90%] medium:max-w-[90%]">
       <Box className="flex flex-col gap-8">
         <CarouselWrapper title={title} productsCount={products.length}>
-          <Box className="grid grid-cols-1 gap-6 small:grid-cols-2 large:grid-cols-4">
+          <Box className="grid grid-cols-1 gap-6 small:grid-cols-2 medium:grid-cols-2 large:grid-cols-4">
             {displayProducts.map((item, index) => (
               <Box key={index}>
                 <ProductTile product={item} regionId={regionId} />

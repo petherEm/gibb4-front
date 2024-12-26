@@ -62,7 +62,7 @@ export default async function Home(props: {
       <ProductCarousel
         products={products}
         regionId={region.id}
-        title="Nasze ikony"
+        title="Icons"
         viewAll={{
           link: '/store',
           text: 'View all',

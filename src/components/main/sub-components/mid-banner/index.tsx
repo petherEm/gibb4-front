@@ -19,14 +19,14 @@ const MidBanner = () => {
       <div className="sm:p-12 absolute inset-0 flex flex-col justify-center p-8">
         <div className="max-w-xl">
           <h1 className="sm:text-5xl mb-4 text-4xl font-bold text-black">
-            Nasze ikony
+            Our favorites
           </h1>
           <p className="mb-6 max-w-md text-lg text-black">
-            Prawdziwe skarby dla koneserek i kolekcjonerek mody. Na prezent też
-            polecamy.
+            True treasures for fashion connoisseurs and collectors. Also highly
+            recommended as gifts.
           </p>
-          <Button variant="link" className="text-black hover:text-black/80">
-            Zobacz →
+          <Button variant="text" className="text-black hover:text-black/80">
+            See more →
           </Button>
         </div>
       </div>

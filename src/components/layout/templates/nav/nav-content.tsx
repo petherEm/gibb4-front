@@ -18,8 +18,8 @@ export default function NavContent(props: any) {
 
   return (
     <>
-      <Box className="flex w-full items-center justify-between">
-        <Box className="flex items-center gap-4">
+      <Box className="flex w-full items-center">
+        <Box className="flex w-3/4 items-center gap-4">
           <Box className="flex large:hidden">
             <SideMenu
               productCategories={props.productCategories}
@@ -46,7 +46,7 @@ export default function NavContent(props: any) {
           )}
         </Box>
 
-        <Box className="flex items-center">
+        <Box className="ml-auto flex items-center">
           {isSearchOpen && (
             <SearchDropdown
               setIsOpen={setIsSearchOpen}
@@ -65,7 +65,7 @@ export default function NavContent(props: any) {
             <Button
               variant="icon"
               withIcon
-              className="ml-auto h-auto !p-2 xsmall:!p-3.5"
+              className="h-auto !p-2 xsmall:!p-3.5"
               onClick={() => setIsSearchOpen(true)}
             >
               <SearchIcon />
